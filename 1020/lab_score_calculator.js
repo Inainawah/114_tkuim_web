@@ -14,7 +14,6 @@ function gradeFrom(avg) {
 var name = prompt('請輸入姓名：');
 if (!name) name = '同學';
 
-// 讀入五科成績
 var subjects = ['國文', '英文', '數學', '自然', '社會'];
 var scores = [];
 
@@ -31,7 +30,6 @@ if (scores.some(s => s === null)) {
   var avg = sum / scores.length;
   var grade = gradeFrom(avg);
 
-  // 檢查是否有不及格科目
   var hasFail = scores.some(s => s < 60);
 
   text = '姓名：' + name + '\n';
