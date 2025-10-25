@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>曾彥勳的作品集</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand-accent: #0d6efd;
+    }
+    .card-hover:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 24px rgba(13,110,253,0.15);
+      transition: all 0.25s ease;
+    }
+    .card-hover {
+      transition: all 0.25s ease;
+    }
+
+    #home {
+      background: linear-gradient(90deg, rgba(13,110,253,0.06), rgba(13,110,253,0.02));
+    }
+
+    .navbar-nav .nav-link { margin-left: .5rem; margin-right: .5rem; }
+
+    .social-link { font-size: 1.25rem; margin: 0 .5rem; text-decoration: none; color: inherit; }
+
+    .card-img-top {
+      height: 200px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. 導航列 -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span class="me-2"><i class="bi bi-person-circle" style="font-size:1.4rem"></i></span>
+        <span class="fw-bold">曾彥勳</span>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="切換導覽">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#home">首頁</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">關於</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portfolio">作品</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">聯絡</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Hero Section -->
+  <section id="home" class="py-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-7">
+          <h1 class="display-4 fw-bold">嗨，我是曾彥勳 — 前端與全端開發者</h1>
+          <p class="lead text-muted mb-4">我專注於建立響應式網頁與互動式使用者介面，喜歡使用 Bootstrap 與現代前端工具，把設計轉成可用的產品。</p>
+          <div class="d-flex gap-2">
+            <a class="btn btn-primary btn-lg" href="#portfolio">查看作品</a>
+            <a class="btn btn-outline-light btn-lg" href="#contact" style="border-color: rgba(255,255,255,0.6); color: #fff;">聯絡我</a>
+          </div>
+        </div>
+
+        <div class="col-md-5 text-center mt-4 mt-md-0">
+          <img src="https://via.placeholder.com/420x320.png?text=Profile" alt="Profile" class="img-fluid rounded shadow">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. 關於我  -->
+  <section id="about" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-5">關於我</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center mb-4 mb-md-0">
+          <img src="itsme.jpg" alt="我的照片" class="img-fluid rounded-circle shadow" style="max-width:260px;">
+        </div>
+        <div class="col-md-6">
+          <p class="fs-5 text-muted">您好，我是 <span class="fw-bold text-primary">曾彥勳</span>，目前就讀淡江大學資訊管理學系三年級。正在學習HTML、CSS、JavaScript，以及使用 Bootstrap 快速建立可用的 UI。</p>
+
+          <p class="mb-2">我的興趣包括：</p>
+          <ul class="list-unstyled">
+            <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><span class="fw-semibold">前端開發</span> — 建構響應式網站與互動元件</li>
+            <li class="mb-2"><i class="bi bi-check2-circle text-success me-2"></i><span class="fw-semibold">後端整合</span> — REST API 與簡單伺服器部署</li>
+            <li><i class="bi bi-check2-circle text-success me-2"></i><span class="fw-semibold">UI/UX</span> — 可用性與視覺一致性</li>
+          </ul>
+
+          <div class="mt-3">
+            <span class="badge bg-primary me-2">可雇用</span>
+            <span class="badge bg-info text-dark">Remote Friendly</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. 技能展示 -->
+  <section id="skills" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5">我的技能</h2>
+      <div class="row g-4">
+
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-code-slash fs-1 me-3"></i>
+                <div>
+                  <h5 class="card-title">前端開發</h5>
+                  <p class="card-text text-muted">熟悉 HTML5、CSS3、JavaScript、Bootstrap。能將設計稿轉成響應式頁面。</p>
+                  <div class="mb-2">
+                    <span class="badge bg-primary">Expert</span>
+                    <span class="badge bg-secondary">5+ 年</span>
+                  </div>
+                  <div class="progress" style="height:10px;">
+                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-server fs-1 me-3"></i>
+                <div>
+                  <h5 class="card-title">後端整合</h5>
+                  <p class="card-text text-muted">熟悉 RESTful API、Node.js、簡易資料庫操作。能串接前端與資料來源。</p>
+                  <div class="mb-2">
+                    <span class="badge bg-warning text-dark">Intermediate</span>
+                  </div>
+                  <div class="progress" style="height:10px;">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <div class="d-flex align-items-start">
+                <i class="bi bi-palette fs-1 me-3"></i>
+                <div>
+                  <h5 class="card-title">UI / 設計感</h5>
+                  <p class="card-text text-muted">具備版面配置與色彩一致性的經驗，能提升產品可用性與視覺吸引力。</p>
+                  <div class="mb-2">
+                    <span class="badge bg-success">Design</span>
+                  </div>
+                  <div class="progress" style="height:10px;">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-tools display-5 text-primary"></i>工具鏈</h5>
+              <p class="card-text text-muted">熟悉 Git、VSCode、NPM，以及基本部署流程。</p>
+              <div class="mb-2">
+                <span class="badge bg-secondary">Git</span>
+                <span class="badge bg-secondary">CI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-phone me-2"></i>響應式設計</h5>
+              <p class="card-text text-muted">確保網站在各種裝置上都有良好體驗，使用 Bootstrap 快速建立 RWD。</p>
+              <div class="progress" style="height:10px;">
+                <div class="progress-bar" role="progressbar" style="width: 88%;" aria-valuenow="88" aria-valuemin="0" aria-valuemax="100">88%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card h-100 card-hover">
+            <div class="card-body">
+              <h5 class="card-title"><i class="bi bi-gear me-2"></i>最佳化</h5>
+              <p class="card-text text-muted">根據效能與可用性做優化（載入速度、圖片尺寸、關鍵渲染路徑）。</p>
+              <div class="progress" style="height:10px;">
+                <div class="progress-bar bg-info" role="progressbar" style="width: 65%;" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">65%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 作品集  -->
+  <section id="portfolio" class="py-5 bg-white">
+    <div class="container">
+      <h2 class="text-center mb-5">作品集</h2>
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="1.jpg" class="card-img-top img-fluid" alt="作品1">
+            <div class="card-body">
+              <h5 class="card-title">互動式企業首頁</h5>
+              <p class="card-text text-muted">以 Bootstrap 快速搭建，包含 RWD、Hero 與服務介紹區塊。</p>
+              <a href="#" class="btn btn-primary">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="2.png" class="card-img-top img-fluid" alt="作品2">
+            <div class="card-body">
+              <h5 class="card-title">作品集網頁範例</h5>
+              <p class="card-text text-muted">展示工程作品與案例研究，含 modal 與 lightbox 範例。</p>
+              <a href="#" class="btn btn-outline-primary">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="3.png" class="card-img-top img-fluid" alt="作品3">
+            <div class="card-body">
+              <h5 class="card-title">電子商務購物頁</h5>
+              <p class="card-text text-muted">包含產品卡、購物車互動與結帳流程模擬。</p>
+              <a href="#" class="btn btn-primary">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="4.jpg" class="card-img-top img-fluid" alt="作品4">
+            <div class="card-body">
+              <h5 class="card-title">行動優化模板</h5>
+              <p class="card-text text-muted">針對行動裝置優化，提升載入與互動體驗。</p>
+              <a href="#" class="btn btn-outline-primary">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="5.jpg" class="card-img-top img-fluid" alt="作品5">
+            <div class="card-body">
+              <h5 class="card-title">管理後台 UI</h5>
+              <p class="card-text text-muted">資料表格、篩選與表單介面設計樣板。</p>
+              <a href="#" class="btn btn-primary">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="card h-100 card-hover">
+            <img src="6.jpg" class="card-img-top img-fluid" alt="作品6">
+            <div class="card-body">
+              <h5 class="card-title">單頁應用示範</h5>
+              <p class="card-text text-muted">使用現代前端流程來建置互動式單頁應用。</p>
+              <a href="#" class="btn btn-outline-primary">查看詳情</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. 聯絡表單 (含 Alert) -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">聯絡我</h2>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="alert alert-info d-flex align-items-center" role="alert">
+            <i class="bi bi-info-circle me-2" style="font-size:1.2rem"></i>
+            <div>
+              歡迎使用下方表單聯絡我 — 我會在三個工作天內回覆。若需快速聯繫請在主旨寫上「Urgent」。
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">姓名</label>
+              <input type="text" class="form-control" id="name" placeholder="你的姓名" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="subject" class="form-label">主旨</label>
+              <input type="text" class="form-control" id="subject" placeholder="例如：合作提案" required>
+            </div>
+
+            <div class="mb-3">
+              <label for="message" class="form-label">訊息</label>
+              <textarea class="form-control" id="message" rows="6" placeholder="請在此輸入訊息..." required></textarea>
+            </div>
+
+            <div class="d-grid">
+              <button type="submit" class="btn btn-primary btn-lg">送出訊息</button>
+            </div>
+          </form>
+
+          <div class="mt-4">
+            <h6 class="mb-2">回應率</h6>
+            <div class="progress" style="height:12px;">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 98%;" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100">98%</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="bg-dark text-white text-center py-4">
+    <div class="container">
+      <div class="mb-3">
+        <a class="social-link text-white mx-2" href="https://github.com/Inainawah" target="_blank" aria-label="GitHub">
+    <i class="bi bi-github fs-3"></i>
+  </a>
+  <a class="social-link text-white mx-2" href="https://www.instagram.com/yan_hsun_0121/" target="_blank" aria-label="Instagram">
+    <i class="bi bi-instagram fs-3"></i>
+  </a>
+  <a class="social-link text-white mx-2" href="https://x.com/wUw7bmEDanAIXiv" target="_blank" aria-label="Twitter">
+    <i class="bi bi-twitter fs-3"></i>
+      </div>
+
+      <p class="mb-0 small">© <span id="year"></span> 曾彥勳。版權所有。</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
