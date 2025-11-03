@@ -1,0 +1,64 @@
+<html lang="zh-Hant">
+</head>
+<body>
+<main class="container">
+<h1>註冊</h1>
+<form id="signupForm" novalidate>
+<label for="name">姓名<span aria-hidden="true"> *</span></label>
+<input id="name" name="name" type="text" required aria-describedby="name-error" />
+<p id="name-error" class="error" aria-live="polite"></p>
+
+
+<label for="email">Email<span aria-hidden="true"> *</span></label>
+<input id="email" name="email" type="email" required aria-describedby="email-error" />
+<p id="email-error" class="error" aria-live="polite"></p>
+
+
+<label for="phone">手機（10 碼）<span aria-hidden="true"> *</span></label>
+<input id="phone" name="phone" type="tel" required pattern="\d{10}" inputmode="numeric" aria-describedby="phone-error" />
+<p id="phone-error" class="error" aria-live="polite"></p>
+
+
+<label for="password">密碼（至少 8 碼，英數混合）</label>
+<input id="password" name="password" type="password" required pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}" aria-describedby="password-error password-strength-text" />
+<div id="password-strength" class="strength">
+<div class="bar" aria-hidden="true"></div>
+<div id="password-strength-text" class="strength-text" aria-live="polite">未輸入</div>
+</div>
+<p id="password-error" class="error" aria-live="polite"></p>
+
+
+<label for="confirm">確認密碼</label>
+<input id="confirm" name="confirm" type="password" required aria-describedby="confirm-error" />
+<p id="confirm-error" class="error" aria-live="polite"></p>
+
+
+<fieldset class="interest-field">
+<legend>興趣標籤（至少選 1）</legend>
+<div id="interestContainer" class="tags" role="group" aria-labelledby="interestLegend">
+<label class="tag"><input type="checkbox" name="interests" value="coding"> 程式</label>
+<label class="tag"><input type="checkbox" name="interests" value="music"> 音樂</label>
+<label class="tag"><input type="checkbox" name="interests" value="travel"> 旅行</label>
+<label class="tag"><input type="checkbox" name="interests" value="sports"> 運動</label>
+</div>
+<p id="interests-error" class="error" aria-live="polite"></p>
+
+<input type="hidden" id="interests-hidden" required aria-hidden="true">
+</fieldset>
+
+
+<label class="terms"><input id="terms" name="terms" type="checkbox" required aria-describedby="terms-error"> 我同意服務條款</label>
+<p id="terms-error" class="error" aria-live="polite"></p>
+
+
+<div class="actions">
+<button id="submitBtn" type="submit">送出</button>
+<div id="status" role="status" aria-live="polite"></div>
+</div>
+</form>
+</main>
+
+
+<script src="signup_form.js" defer></script>
+</body>
+</html>
