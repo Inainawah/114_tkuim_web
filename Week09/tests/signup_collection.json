@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "Signup API Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST /api/signup - success",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Test User\",\n  \"email\": \"test@example.com\",\n  \"phone\": \"0912345678\",\n  \"course\": \"Node.js\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signup",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "signup"]
+        }
+      }
+    },
+    {
+      "name": "POST /api/signup - missing field",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"No Email\",\n  \"phone\": \"0912345678\",\n  \"course\": \"Node.js\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/signup",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "signup"]
+        }
+      }
+    },
+    {
+      "name": "GET /api/signup",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/api/signup",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "signup"]
+        }
+      }
+    },
+    {
+      "name": "GET /notfound",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:3000/notfound",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["notfound"]
+        }
+      }
+    }
+  ]
+}

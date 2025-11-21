@@ -1,0 +1,12 @@
+### 測試 POST /api/signup
+POST http://localhost:3001/api/signup
+Content-Type: application/json
+
+{
+  "name": "REST Client 使用者",
+  "email": "rest@test.com",
+  "phone": "0911111111"
+}
+
+### 測試 GET /api/signup
+GET http://localhost:3001/api/signup
