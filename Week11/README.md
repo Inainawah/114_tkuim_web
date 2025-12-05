@@ -1,11 +1,11 @@
-環境需求:
+# 環境需求:
 
 Node.js (v18+)
 Docker Desktop
 MongoDB Compass
 
 
-啟動步驟：
+# 啟動步驟：
 
 步驟 1: 啟動 MongoDB 容器
 cd Week11/docker
@@ -23,12 +23,12 @@ npm install
 npm run dev
 
 
-測試方式:
+# 測試方式:
 
-# 連線到容器內的 mongosh
+連線到容器內的 mongosh:
 docker exec -it week11-mongo mongosh -u root -p password123 --authenticationDatabase admin
 
-# 在 Shell 內執行以下指令：
+在Shell內執行以下指令：
 use week11
 db.participants.find().pretty()
 db.participants.getIndexes()
