@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>提瓦特抽卡分析計算機</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-stars"></div>
+    <div class="app-container">
+        <header>
+            <h1>米遊抽卡分析</h1>
+            <p>計算你的祈願機率</p>
+        </header>
+
+        <main>
+            <div class="toggle-container">
+                <button class="toggle-btn active" id="btn-character" onclick="switchMode('character')">角色活動祈願</button>
+                <button class="toggle-btn" id="btn-weapon" onclick="switchMode('weapon')">武器活動祈願</button>
+            </div>
+
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="pulls-input">擁有抽數</label>
+                    <input type="number" id="pulls-input" placeholder="例如: 160" min="0">
+                </div>
+                <!-- Optional: Current Pity Input could be added here -->
+                <button class="calculate-btn" onclick="calculate()">開始分析</button>
+            </div>
+
+            <div class="results-section" id="results-display" style="opacity: 0; transform: translateY(20px);">
+                <div class="result-card">
+                    <h3>分析結果</h3>
+                    <div class="result-grid">
+                        <div class="result-item">
+                            <span class="label">總抽數</span>
+                            <span class="value" id="res-pulls">0</span>
+                        </div>
+                        <div class="result-item highlight">
+                            <span class="label">期望限定五星</span>
+                            <span class="value" id="res-limited">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">期望五星總數</span>
+                            <span class="value" id="res-total">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="label">至少獲得一隻限定的機率</span>
+                            <span class="value" id="res-prob-one">0%</span>
+                        </div>
+                    </div>
+                    <p class="disclaimer">*基於 10,000 次模擬計算</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

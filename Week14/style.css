@@ -1,0 +1,217 @@
+:root {
+    --bg-color: #0c0f1d;
+    --card-bg: #181b2c;
+    --primary-color: #dcb386; /* Gold/Beige common in UI */
+    --accent-blue: #4cc2f1;
+    --accent-pink: #f570bc;
+    --text-color: #eee;
+    --text-muted: #889;
+    --border-color: #3b3f54;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Starry Background Effect (Simple CSS) */
+.background-stars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 3px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 2px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 3px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
+    z-index: -1;
+    opacity: 0.6;
+}
+
+.app-container {
+    width: 90%;
+    max-width: 500px;
+    background: rgba(24, 27, 44, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    transition: all 0.3s ease;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header h1 {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 0 10px rgba(220, 179, 134, 0.3);
+}
+
+header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.toggle-container {
+    display: flex;
+    background: #111320;
+    border-radius: 12px;
+    padding: 5px;
+    margin-bottom: 2rem;
+    border: 1px solid var(--border-color);
+}
+
+.toggle-btn {
+    flex: 1;
+    padding: 12px;
+    background: transparent;
+    border: none;
+    color: var(--text-muted);
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.toggle-btn.active {
+    background: #32364a;
+    color: var(--primary-color);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#btn-character.active { border-bottom: 2px solid var(--accent-pink); }
+#btn-weapon.active { border-bottom: 2px solid var(--primary-color); }
+
+.input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+label {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-left: 5px;
+}
+
+input[type="number"] {
+    background: #111320;
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--primary-color);
+}
+
+.calculate-btn {
+    background: linear-gradient(135deg, #dcb386, #b58d63);
+    color: #1a1a1a;
+    border: none;
+    padding: 16px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.1s, box-shadow 0.3s;
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 0 15px rgba(220, 179, 134, 0.4);
+    transform: translateY(-1px);
+}
+
+.calculate-btn:active {
+    transform: translateY(1px);
+}
+
+.results-section {
+    margin-top: 2rem;
+    transition: all 0.5s ease;
+}
+
+.result-card {
+    background: #23273a;
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid var(--border-color);
+}
+
+.result-card h3 {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.result-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.result-item.highlight .value {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    text-shadow: 0 0 10px rgba(220, 179, 134, 0.2);
+}
+
+.label {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 5px;
+}
+
+.value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.disclaimer {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: #555;
+    font-style: italic;
+}
