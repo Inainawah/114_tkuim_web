@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Week12 報名系統</title>
+    <style>
+        body { font-family: sans-serif; max-width: 800px; margin: 20px auto; padding: 0 20px; }
+        .hidden { display: none; }
+        section { border: 1px solid #ddd; padding: 15px; margin-bottom: 20px; border-radius: 8px; }
+        .user-info { display: flex; justify-content: space-between; align-items: center; background: #f4f4f4; padding: 10px; }
+        .error { color: red; font-weight: bold; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f8f8f8; }
+        button.delete-btn { background: #ff4d4d; color: white; border: none; padding: 5px 10px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>登入系統</h1>
+
+    <section id="loginSection">
+        <h2>使用者登入</h2>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email (admin@example.com)" required>
+            <input type="password" id="loginPass" placeholder="Password (pass1234)" required>
+            <button type="submit">登入</button>
+        </form>
+        <p id="loginMsg" class="error"></p>
+    </section>
+
+    <section id="userSection" class="hidden">
+        <div class="user-info">
+            <span>目前登入：<strong id="displayEmail"></strong> (<span id="displayRole"></span>)</span>
+            <button onclick="logout()">登出</button>
+        </div>
+    </section>
+
+    <section id="signupFormSection" class="hidden">
+        <h2>填寫報名資料</h2>
+        <form id="signupForm">
+            <input type="text" id="name" placeholder="姓名" required>
+            <input type="text" id="dept" placeholder="系級/部門" required>
+            <textarea id="note" placeholder="備註"></textarea>
+            <button type="submit" id="submitBtn">送出報名</button>
+        </form>
+    </section>
+
+    <section id="listSection" class="hidden">
+        <h2>報名資料列表</h2>
+        <button onclick="loadParticipants()">整理列表</button>
+        <table id="participantTable">
+            <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>部門</th>
+                    <th>報名者 (Email)</th>
+                    <th>操作</th>
+                </tr>
+            </thead>
+            <tbody id="participantList">
+                </tbody>
+        </table>
+        <p id="emptyMsg" class="hidden">目前沒有任何報名資料。</p>
+    </section>
+
+    <script src="api.js"></script>
+    <script src="login.js"></script>
+    <script src="signup_form.js"></script>
+    <script src="list.js"></script>
+
+    <script>
+        function updateUI() {
+            const token = localStorage.getItem('token');
+            const user = JSON.parse(localStorage.getItem('user'));
+
+            if (token && user) {
+                document.getElementById('loginSection').classList.add('hidden');
+                document.getElementById('userSection').classList.remove('hidden');
+                document.getElementById('signupFormSection').classList.remove('hidden');
+                document.getElementById('listSection').classList.remove('hidden');
+                
+                document.getElementById('displayEmail').innerText = user.email;
+                document.getElementById('displayRole').innerText = user.role;
+                loadParticipants();
+            } else {
+                document.getElementById('loginSection').classList.remove('hidden');
+                document.getElementById('userSection').classList.add('hidden');
+                document.getElementById('signupFormSection').classList.add('hidden');
+                document.getElementById('listSection').classList.add('hidden');
+            }
+        }
+
+        function logout() {
+            localStorage.clear();
+            updateUI();
+        }
+        updateUI();
+    </script>
+</body>
+</html>
